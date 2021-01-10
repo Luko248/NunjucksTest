@@ -1,0 +1,9 @@
+﻿@import "../../base/global";
+
+.button-container {
+    display: inline-grid;
+    align-items: center;
+    justify-content: flex-start;
+    grid-gap: $gap--l;
+    grid-template-columns: repeat(2, auto);
+}

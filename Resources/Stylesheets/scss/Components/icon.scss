@@ -1,0 +1,9 @@
+@import "../base/global";
+
+.icon {
+    display: block;
+    width: var(--icon-size);
+    min-width: var(--icon-size);
+    height: var(--icon-size);
+    --icon-size: #{$gap--l};
+}

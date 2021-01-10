@@ -1,0 +1,105 @@
+@import "../base/global";
+
+.modal {
+    top: 40%;
+    width: 100%;
+    max-width: var(--modal-width);
+    background-color: $color-white;
+    border-radius: $border-radius;
+    overflow: hidden;
+    --modal-width: #{$width-mobile-l};
+    --modal-padding: #{$gap--xxl};
+    @include center-item;
+
+    @include res-max-tablet {
+        --modal-padding: #{$gap--xl};
+    }
+
+    @include res-max-mobile-l {
+        --modal-width: calc(100% - #{$gap--xl});
+        --modal-padding: #{$gap--l};
+    }
+
+    &--larger {
+        top: 15vh;
+        transform: translate(-50%, 0);
+        --modal-width: #{$width-tablet};
+
+        @include res-max-tablet {
+            top: 10vh;
+            --modal-width: calc(100% - #{$gap--xl});
+        }
+    }
+
+    &__overlay {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $color-overlay;
+        z-index: 99999;
+    }
+
+    &__close {
+        background-color: $color-trans;
+        border-width: 0;
+        cursor: pointer;
+        --icon-color: #{$color-secondary};
+
+        > .icon {
+            transition: fill $trans-time var(--anim-type);
+            fill: var(--icon-color);
+            --icon-size: #{$gap--xl};
+            @include center-item;
+        }
+
+        &:hover, &:focus {
+            --icon-color: #{$color-primary};
+        }
+    }
+
+    &__header {
+        padding: var(--modal-padding);
+        padding-bottom: 0;
+
+        .title {
+            @include res-max-mobile-l {
+                padding-right: $gap--l;
+            }
+        }
+
+        button {
+            position: absolute;
+            top: $gap--m;
+            right: $gap--m;
+            display: block;
+            width: $gap--xl;
+            height: $gap--xl;
+        }
+    }
+
+    &__content {
+        max-height: 60vh;
+        padding: 0 var(--modal-padding);
+        overflow: auto;
+    }
+
+    &__footer {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: flex-end;
+        padding: var(--modal-padding);
+
+        @include res-max-mobile-l {
+            justify-content: center;
+        }
+
+        &--space-between {
+            justify-content: space-between;
+        }
+    }
+}

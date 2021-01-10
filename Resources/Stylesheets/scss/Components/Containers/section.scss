@@ -1,0 +1,44 @@
+﻿@import "../../base/global";
+
+.sec {
+    padding: var(--sec-padding);
+    background: var(--section-bg);
+    scroll-margin-top: var(--nav-height);
+    --sec-padding: 5.6rem 0;
+
+    @include res-max-laptop-s {
+        --sec-padding: #{$gap--xxl} 0;
+    }
+
+    &--pad-large {
+        --sec-padding: 10rem 0;
+
+        @include res-max-laptop-m {
+            --sec-padding: 5.6rem 0;
+        }
+
+        @include res-max-tablet {
+            --sec-padding: #{$gap--xxl} 0;
+        }
+    }
+
+    &--pad-top {
+        padding-bottom: 0;
+    }
+
+    &--pad-bottom {
+        padding-top: 0;
+    }
+
+    &--white {
+        --section-bg: #{$color-white};
+    }
+
+    &--transparent {
+        --section-bg: #{$color-trans};
+    }
+
+    &--fill {
+        min-height: calc(100vh - var(--nav-height));
+    }
+}

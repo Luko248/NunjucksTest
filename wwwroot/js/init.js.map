@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://node_modules_config/./Resources/Scripts/init.ts"],"names":[],"mappings":";;;;;;AAAA,OAAO,CAAC,GAAG,CAAC,cAAc,CAAC,CAAC","file":"init.js","sourcesContent":["console.log('Hello World!');"],"sourceRoot":""}
